@@ -35,7 +35,7 @@ public class LenahanU1S1Problems {
         System.out.println("Enter investment amount: ");
         double amount = ui.nextDouble();
         System.out.println("Enter annual interest rate in percentage: ");
-        double interest = ui.nextDouble();
+        double interest = ui.nextDouble()/100;
         System.out.println("Enter number of years: ");
         double years = ui.nextDouble();
         double futureInvestmentValue = (amount * Math.pow((1+(interest/12)), years*12));
