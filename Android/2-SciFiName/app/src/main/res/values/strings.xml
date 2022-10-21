@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SciFiName</string>
+    <string name="output">output</string>
+    <string name="generate">Generate</string>
+    <string name="sis">Sis:</string>
+    <string name="bro">Bro:</string>
+    <string name="school">School:</string>
+    <string name="city">City:</string>
+    <string name="lastname">LastName:</string>
+    <string name="first_name">First Name:</string>
+    <string name="welcome_to_the_scifi_generator">Welcome to the SciFi Generator</string>
+</resources>

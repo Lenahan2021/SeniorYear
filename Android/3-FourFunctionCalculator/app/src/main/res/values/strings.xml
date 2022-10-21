@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FourFunctionCalculator</string>
+    <string name="enter_number">Enter a number</string>
+    <string name="div">\u00F7</string>
+    <string name="multiply">x</string>
+    <string name="subtract">-</string>
+    <string name="add">+</string>
+</resources>
