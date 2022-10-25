@@ -1,13 +1,13 @@
 public class GroceryItem {
 
-     private String name;
-     private double cost;
+     public String name;
+     public double cost;
 
      //need the no arg constructor technically
 
-     public GroceryItem(String name,double cost){
-          this.name=name;
-          this.cost=cost;
+     public GroceryItem(String nameP,double costP) {
+          this.name=nameP;
+          this.cost=costP;
      }
 
      //getters and setters
@@ -25,9 +25,8 @@ public class GroceryItem {
      }
 
      //toString
-     @Override
      public String toString(){
-          return this.name +" - "+String.valueOf(this.cost);
+          return this.name +" - $"+String.valueOf(this.cost);
      }
 
 }

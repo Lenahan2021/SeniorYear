@@ -2,12 +2,15 @@ import java.util.Scanner;
 
 public class LenahanU1S12Problems {
     public static void main(String[] args) {
+        triangleArea();
+        midPointTable();
+        minuteYearConverter();
         triangleVolume();
     }
 
-    public static void triangleArea() {
+    private static void triangleArea() {
         Scanner ui = new Scanner(System.in);
-        
+
         System.out.println("Enter the data");
         String set = ui.nextLine();
         String[] setList = set.split(" ");
@@ -39,6 +42,25 @@ public class LenahanU1S12Problems {
     private static double getDistance(double x1,double y1, double x2,double y2) {
         double side = Math.pow(Math.abs(x2-x1), 2) + Math.pow(Math.abs(y2-y1), 2);
         return Math.sqrt(side);
+    }
+
+    private static void midPointTable() {
+        double[] aX = {0,1,2,3,4};
+
+        double[] aY = {0,4,7,9,11};
+
+        double[] bX = {2,4,6,10,12};
+
+        double[] bY = {1,2,3,5,7};
+
+
+        System.out.println("\t a \t \t \t b \t \t    Middle Point");
+        for (int i = 0; i < aX.length; i++) {
+            //System.out.println(String.format("(%f, %f) \t (%f, %f) \t (%f, %f)", aX[i], aY[i], bX[i], bY[i], (bX[i]+aX[i])/2, (bY[i]+aY[i])/2));
+            System.out.printf("(%f, %f) \t (%f, %f) \t (%f, %f)\n", aX[i], aY[i], bX[i], bY[i], (bX[i]+aX[i])/2, (bY[i]+aY[i])/2);
+
+        }
+
     }
 
     private static void minuteYearConverter() {

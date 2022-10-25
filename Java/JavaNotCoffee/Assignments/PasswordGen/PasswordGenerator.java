@@ -1,13 +1,14 @@
 import java.util.Scanner;
 import java.util.Random;
+
 public class PasswordGenerator {
     public static void main(String[] args) {
-        int chars=0;
-        int nums=0;
-        int specialChars=0;
+        int chars = 0;
+        int nums = 0;
+        int specialChars = 0;
         Scanner ui = new Scanner(System.in);
         boolean requirements = false;
-        while(!requirements) {
+        while (!requirements) {
             System.out.println("How many characters do you want?: ");
             chars = ui.nextInt();
             System.out.println("How many numbers do you want?: ");
@@ -15,11 +16,11 @@ public class PasswordGenerator {
             System.out.println("How many special characters do you want?: ");
             specialChars = ui.nextInt();
 
-            if ((chars+nums+specialChars) > 8) {
+            if (passwordStrengthChecker(chars, nums, specialChars)) {
                 requirements = true;
-            } 
-            else {
-                System.out.println("Password needs to be a atleast 8 characters long");
+            } else {
+                System.out.println(
+                        "Password needs to be a atleast 8 characters long and have atleast one of each option.");
             }
         }
 
@@ -37,29 +38,29 @@ public class PasswordGenerator {
 
     public static String genPassword(int chars, int nums, int specialChars) {
         boolean goodPass = false;
-        String out= "";
+        String out = "";
         while (!goodPass) {
-            //https://stackoverflow.com/questions/3559063/how-to-enter-quotes-in-a-java-string
-            String specialCharacters='';
-            //https://stackoverflow.com/questions/2626835/is-there-functionality-to-generate-a-random-character-in-java
-            out= "";
+            // https://stackoverflow.com/questions/3559063/how-to-enter-quotes-in-a-java-string
+            String specialCharacters = "!@#$%^&*()_+='{}[]|:;<,>.?";
+            // https://stackoverflow.com/questions/2626835/is-there-functionality-to-generate-a-random-character-in-java
+            out = "";
             Random r = new Random();
-            for(int i = 0; i < chars; i++) {
+            for (int i = 0; i < chars; i++) {
                 if (r.nextInt(2) == 1) {
-                    out += (char)(r.nextInt(26) + 'a');
+                    out += (char) (r.nextInt(26) + 'a');
                 } else {
-                    out += (char)(r.nextInt(26) + 'A');
+                    out += (char) (r.nextInt(26) + 'A');
                 }
             }
-            for(int i = 0; i < nums; i++) {
-                out += (char)(r.nextInt(10) + 48);
+            for (int i = 0; i < nums; i++) {
+                out += (char) (r.nextInt(10) + 48);
             }
 
-            for(int i = 0; i < specialChars; i++) {
+            for (int i = 0; i < specialChars; i++) {
                 out += (specialCharacters.charAt(r.nextInt(specialCharacters.length() - 1)));
             }
 
-            if(hasUppercase(out)) {
+            if (hasUppercase(out)) {
                 goodPass = true;
             }
         }
@@ -67,13 +68,24 @@ public class PasswordGenerator {
     }
 
     public static boolean hasUppercase(String pass) {
-        for (int i =0; i < pass.length(); i++) {
+        boolean hasUpper = false;
+        boolean hasLower = false;
+        for (int i = 0; i < pass.length(); i++) {
             if (Character.isUpperCase(pass.charAt(i))) {
-                //Passes requirement
-                return true;
+                // Passes requirement
+                hasUpper = true;
+            } else if (Character.isLowerCase(pass.charAt(i))) {
+                hasLower = true;
             }
         }
+        return hasUpper == hasLower;
+    }
+
+    public static boolean passwordStrengthChecker(int chars, int nums, int specChars) {
+        if ((chars + nums + specChars) > 8 && chars >= 1 && nums >= 1 && specChars >= 1) {
+            return true;
+        }
+
         return false;
     }
 }
-
