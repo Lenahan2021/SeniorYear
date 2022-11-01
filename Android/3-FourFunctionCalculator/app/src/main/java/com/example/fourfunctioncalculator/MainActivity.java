@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //link java objects to widgets
-        number1TXT = findViewById(R.id.number1TXT);
-        number2TXT = findViewById(R.id.number2TXT);
         addBTN = findViewById(R.id.addBTN);
         subBTN = findViewById(R.id.minusBTN);
         mulBTN = findViewById(R.id.multBTN);
