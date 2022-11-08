@@ -7,10 +7,10 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/VlinearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,22 +19,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.325">
 
-        <Button
-            android:id="@+id/addBTN"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:orientation="horizontal"
             android:padding="5dp"
-            android:text="@string/add" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/minusBTN"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="@string/subtract" />
+            <Button
+                android:id="@+id/addBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/add" />
 
+            <Button
+                android:id="@+id/minusBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/subtract" />
+
+            <Button
+                android:id="@+id/multBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/multiply" />
+            <!--Evenly distribute widgets in a layout, check the weight and width-->
+            <Button
+                android:id="@+id/divBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/div"/>
+        </LinearLayout>
+    </LinearLayout>>
+
+<<<<<<< HEAD
         <!--Evenly distribute widgets in a layout, check the weight and width-->
         <Button
             android:id="@+id/multBTN"
@@ -53,6 +82,8 @@
             android:text="@string/div" />
 
     </LinearLayout>
+=======
+>>>>>>> a0239d5b8bd0d71f3853e1a4444f489dc410313f
 
     <TextView
         android:id="@+id/output"
