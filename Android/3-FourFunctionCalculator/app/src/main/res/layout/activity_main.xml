@@ -64,6 +64,10 @@
     </LinearLayout>>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e856212908d3f1580e87e7c427b2a8690a382387
         <!--Evenly distribute widgets in a layout, check the weight and width-->
         <Button
             android:id="@+id/multBTN"
@@ -82,8 +86,12 @@
             android:text="@string/div" />
 
     </LinearLayout>
+<<<<<<< HEAD
 =======
 >>>>>>> a0239d5b8bd0d71f3853e1a4444f489dc410313f
+=======
+>>>>>>> 68e0990b4c0c2104430c53cad5823bb22918401d
+>>>>>>> e856212908d3f1580e87e7c427b2a8690a382387
 
     <TextView
         android:id="@+id/output"

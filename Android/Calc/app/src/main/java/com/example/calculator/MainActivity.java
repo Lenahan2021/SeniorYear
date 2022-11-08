@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         divBTN = findViewById(R.id.divide);
         decimalBTN = findViewById(R.id.decimal);
         clearBTN = findViewById(R.id.Clear);
+        equalBTN = findViewById(R.id.equal);
 
         oneBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         divBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                operationFunc((String) divBTN.getText());
+                operationFunc("/");
             }
         });
 
@@ -137,12 +138,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        equalBTN.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                equal();
-//            }
-//        });
+        equalBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                equal();
+            }
+        });
     }
 
     private void input(String symbol) {
@@ -152,28 +153,33 @@ public class MainActivity extends AppCompatActivity {
     private void clear() {
         output.setText("");
         output.setHint("0");
-        operation = null;
+        operation = "";
+        number1 = 0;
+        number2 = 0;
     }
 
     private void operationFunc(String operator) {
         operation = operator;
         number1 = Double.parseDouble(String.valueOf(output.getText()));
+        System.out.println(number1);
         output.setText("");
-
     }
 
     private void equal() {
-        if (operation != null) {
+        double scale = Math.pow(10, 3);
+        if (!operation.equals("")) {
             number2 = Double.parseDouble(String.valueOf(output.getText()));
-            if (operation == "+") {
-                output.setText(String.valueOf(number1 + number2));
-            } else if (operation == "-") {
-                output.setText(String.valueOf(number1 - number2));
-            } else if (operation == "*") {
-                output.setText(String.valueOf(number1 * number2));
-            } else if (operation == "/") {
-                output.setText(String.valueOf(number1 / number2));
+            if (operation.equals("+")) {
+                output.setText(String.valueOf(Math.round(((number1 + number2)*scale)/scale)));
+            } else if (operation.equals("-")) {
+                output.setText(String.valueOf(Math.round(((number1 - number2)*scale)/scale)));
+            } else if (operation.equals("X")) {
+                output.setText(String.valueOf(Math.round(((number1 * number2)*scale)/scale)));
+            } else if (operation.equals("/")) {
+                output.setText(String.valueOf(Math.round(((number1 / number2)*scale)/scale)));
             }
+        } else {
+            output.setText(String.valueOf(number2));
         }
     }
 
