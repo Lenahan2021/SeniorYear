@@ -15,8 +15,10 @@ import java.util.ArrayList;
 public class MainRoom extends AppCompatActivity {
 
     public static ArrayList<String> inventory;
+    public static boolean slainWizard;
     private TextView mainText, WizardKeyText;
     private Button CastleBTN, CaveBTN, WizardTowerBTN;
+    public static boolean hasVisitedTown;
 
 
 
@@ -45,7 +47,7 @@ public class MainRoom extends AppCompatActivity {
             inventory.add("Created");
         }
 
-mainText.setText(String.format("Welcome %s from %s. You are a %s , %s alien aged %s that is very %s. You were teleported here through the time machine and you need to find your way back home. Navigate through the rooms in order to get back to your spaceship and go bac home",
+mainText.setText(String.format("Welcome %s from %s. You are a %s , %s alien aged %s that is very %s. You were thrown from your ship during the crash and you need to find your way back to the craft. Navigate through the rooms in order to get back to your spaceship and go home",
         extras.getString("nameExtra"), extras.getString("townExtra"), extras.getString("richPoorExtra"), extras.getString("strongWeakExtra"),
         extras.getString("AgeExtra"), extras.getString("tallShortExtra")));
 
@@ -64,6 +66,7 @@ mainText.setText(String.format("Welcome %s from %s. You are a %s , %s alien aged
 
                 if (hasKey) {
                     Intent i = new Intent(MainRoom.this, WizardTower.class);
+                    i.putExtras(extras);
                     startActivity(i);
                 } else {
                     WizardKeyText.setText("You need to find the Wizard Key to advance!");

@@ -13,6 +13,27 @@
         android:theme="@style/Theme.AdeventureStory"
         tools:targetApi="31">
         <activity
+            android:name=".Spaceship"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Alley"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Town"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DeepCave"
             android:exported="false">
             <meta-data
