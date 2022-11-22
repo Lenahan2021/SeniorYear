@@ -4,8 +4,7 @@ public class Category {
     String name;
     ArrayList<Entry> entries;
 
-    public Category(String name, ArrayList<Entry> entry) {
+    public Category(String name) {
         this.name = name;
-        this.entries = entry;
     }
 }

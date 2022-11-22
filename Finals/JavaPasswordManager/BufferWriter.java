@@ -58,7 +58,7 @@ public class BufferWriter {
         //technically you need both for the file to be saved and closed
     }
 
-    public static String readString() {
+    public static String readString(String file) {
         //check to see if in  is already there, if not create it
         if (in==null) {
             try {
