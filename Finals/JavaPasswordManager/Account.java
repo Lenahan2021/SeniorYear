@@ -1,10 +1,10 @@
 public class Account {
-    String first;
-    String last;
-    String user;
-    String pass;
+    public String first;
+    public String last;
+    public String user;
+    public String pass;
 
-    public void createAccount(String firstName, String lastName, String username, String password) {
+    public Account(String firstName, String lastName, String username, String password) {
         this.first = firstName;
         this.last = lastName;
         this.user = username;

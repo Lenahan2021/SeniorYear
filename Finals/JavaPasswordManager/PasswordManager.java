@@ -6,17 +6,24 @@ public class PasswordManager {
     private static boolean loggedIn = false;
     private static int loginTries = 4;
     private static ArrayList<Account> accounts = new ArrayList<Account>();
+    private static ArrayList<Category> categories = new ArrayList<Category>();
+
 
     public static void main(String[] args) {
         while (!loggedIn) {
-            loggedIn = login();
+            if (loginTries >0) {
+                loggedIn = login();
+            } else {
+                System.out.println("Shutting down");
+                System.exit(0);
+            }
         }
-
-        
+        Utils.clearConsole();
         System.out.println("You are now logged in!");
     }
 
     public static boolean login() {
+        Utils.clearConsole();
 
         System.out.println("Welcome to Pass, please sign in to get started");
         System.out.println(String.format("You have %s login tries remaining.", loginTries));
@@ -28,6 +35,7 @@ public class PasswordManager {
         switch(choice) {
             case "1":
                 Utils.clearConsole();
+                System.out.println("Follow the instructions to create account");
                 System.out.println("Please enter a first name");
                 String first = ui.next();
                 System.out.println("Please enter a last name");
@@ -37,8 +45,7 @@ public class PasswordManager {
                 System.out.println("Please enter a password");
                 String password = ui.next();
 
-                Account acc = new Account();
-                acc.createAccount(first, last, username, password);
+                Account acc = new Account(first, last, username, password);
                 accounts.add(acc);
                 return false;
             case "2":
@@ -59,10 +66,12 @@ public class PasswordManager {
                         }
                     }
                 }
+                System.out.println("Username not in system.");
+                loginTries--;
             default:
                 return false;
-        }
+            
         
+        } 
     }
-        
 }
