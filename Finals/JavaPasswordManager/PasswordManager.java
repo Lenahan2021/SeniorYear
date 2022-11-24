@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class PasswordManager {
 
     private static boolean loggedIn = false;
+    private static Account loggedInAccount;
     private static int loginTries = 4;
     private static ArrayList<Account> accounts = new ArrayList<Account>();
     private static ArrayList<Category> categories = new ArrayList<Category>();
@@ -13,7 +14,7 @@ public class PasswordManager {
     public static void main(String[] args) {
         readAndCreateAccounts();
         while (!loggedIn) {
-            if (loginTries >0) {
+            if (loginTries > 0) {
                 loggedIn = login();
             } else {
                 System.out.println("Shutting down");
@@ -22,6 +23,7 @@ public class PasswordManager {
         }
         Utils.clearConsole();
         System.out.println("You are now logged in!");
+        mainMenu();
     }
 
     public static boolean login() {
@@ -63,6 +65,7 @@ public class PasswordManager {
                 for (int i =0; i < accounts.size(); i++) {
                     if (accounts.get(i).user.equals(username)) {
                         if (accounts.get(i).pass.equals(password)) {
+                            loggedInAccount = accounts.get(i);
                             ui.close();
                             return true;
                         } else {
@@ -88,6 +91,14 @@ public class PasswordManager {
 
     }
 
+    public static void mainMenu() {
+        readAndCreateDatabase();
+        System.out.println("Please select one of your categories to view the entries.");
+        for (int i =0; i < categories.size(); i++) {
+            System.out.println(String.format("%s. %s",  i+1, categories.get(i).name));
+        }
+    }
+
     public static void readAndCreateAccounts() {
         String accountsStr = Utils.readStringFromFile("accounts.txt");
         Utils.saveAndClose();
@@ -99,6 +110,27 @@ public class PasswordManager {
             //gets rid of the whitepsace associated
             Account newAcc = new Account(accountInfo[0].trim(), accountInfo[1].trim(), accountInfo[2].trim(),accountInfo[3].trim());
             accounts.add(newAcc);
+        }
+    }
+
+    private static void createCategories(String s) {
+        String[] categoriesStr = s.split(",");
+        for (int i =0; i<categoriesStr.length; i++) {
+            Category cat = new Category(categoriesStr[i]);
+            categories.add(cat);
+        }
+    }
+
+    public static void readAndCreateDatabase() {
+        String s = "";
+        s = Utils.readStringFromFile(String.format("Database/%sCategory.txt", loggedInAccount.user));
+        Utils.saveAndClose();
+        if (s ==null) {
+            s = Utils.readStringFromFile("Database/DefaultCategories.txt");
+            Utils.saveAndClose();
+            createCategories(s);
+        } else {
+            createCategories(s);
         }
     }
 

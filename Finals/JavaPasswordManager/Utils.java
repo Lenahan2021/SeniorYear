@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class Utils {
 
@@ -24,12 +25,21 @@ public class Utils {
             try {
                 in = new Scanner(new File(file));
             }
+            //https://www.w3schools.com/java/java_files_create.asp
             catch (Exception e) {
                 System.err.println("Cannot open file for input!");
-                e.printStackTrace();
+                System.out.println("Creating new file!");
+                File createFile = new File(file);
+                try {
+                    createFile.createNewFile();
+                    System.out.println("File created!");
+                    in = new Scanner(new File(file));
+                } catch (IOException t) {
+                    System.out.println("Cannot create new file!");
+                    t.printStackTrace();
+                }
             }
         }
-
         //read in the values from the text file
         try {
             String s = "";
@@ -99,6 +109,8 @@ public class Utils {
     }
 
     public static void quitApp() {
+        PasswordManager.writeAccounts();
+        saveAndClose();
         System.exit(0);
     }
 }
