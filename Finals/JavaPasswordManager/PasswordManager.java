@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class PasswordManager {
 
     private static boolean loggedIn = false;
+    private static boolean loggedOut = false;
     private static Account loggedInAccount;
     private static int loginTries = 4;
     private static ArrayList<Account> accounts = new ArrayList<Account>();
@@ -23,7 +24,10 @@ public class PasswordManager {
         }
         Utils.clearConsole();
         System.out.println("You are now logged in!");
-        mainMenu();
+        readAndCreateDatabase();
+        while(!loggedOut) {
+            mainMenu();
+        }
     }
 
     public static boolean login() {
@@ -53,7 +57,6 @@ public class PasswordManager {
 
                 Account acc = new Account(first, last, username, password);
                 accounts.add(acc);
-                ui.close();
                 return false;
             case "2":
                 Utils.clearConsole();
@@ -66,12 +69,10 @@ public class PasswordManager {
                     if (accounts.get(i).user.equals(username)) {
                         if (accounts.get(i).pass.equals(password)) {
                             loggedInAccount = accounts.get(i);
-                            ui.close();
                             return true;
                         } else {
                             System.out.println("Incorrect Password");
                             loginTries--;
-                            ui.close();
                             return false;
                         }
                     }
@@ -81,21 +82,41 @@ public class PasswordManager {
             case "3":
                 System.out.println("You have logged out.");
                 writeAccounts();
-                ui.close();
                 Utils.quitApp();
                 return false;
             default:
-                ui.close();
                 return false;
         } 
 
     }
 
     public static void mainMenu() {
-        readAndCreateDatabase();
+        int selectedCat = 0;
+        categories.get(0).entries.add(new Entry("Keepass", "user", "Pass", "cat"));
         System.out.println("Please select one of your categories to view the entries.");
         for (int i =0; i < categories.size(); i++) {
             System.out.println(String.format("%s. %s",  i+1, categories.get(i).name));
+        }
+        Scanner ui = new Scanner(System.in);
+        System.out.println(categories.size());
+        System.out.print("Please select a category number: ");
+        selectedCat = ui.nextInt();
+        if (selectedCat < categories.size()) {
+            displayCategory(selectedCat);
+        } else if (selectedCat == categories.size()) {
+            System.out.println("logging out!");
+        }
+            else {
+                System.out.println("Invalid choice");
+        }
+    }
+
+    public static void displayCategory(int selected) {
+        Utils.clearConsole();
+        for (int i =0; i < categories.get(selected-1).entries.size(); i++) {
+            System.out.println(String.format("%s. name: %s", i+1, categories.get(selected-1).entries.get(i).name));
+            System.out.println(String.format("user: %s", categories.get(selected-1).entries.get(i).username));
+            System.out.println(String.format("pass %s \n", categories.get(selected-1).entries.get(i).password));
         }
     }
 

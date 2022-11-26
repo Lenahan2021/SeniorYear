@@ -1,8 +1,8 @@
 public class Entry {
-    String name;
-    String username;
-    String password;
-    String categoryType;
+    public String name;
+    public String username;
+    public String password;
+    public String categoryType;
 
     public Entry(String name, String user, String pass, String cat) {
         this.name = name;
