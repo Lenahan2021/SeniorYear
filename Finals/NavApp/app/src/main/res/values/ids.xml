@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="generate" type="id" />
+    <item name="outputTXT" type="id" />
+    <item name="newMadLibBTN" type="id" />
+    <item name="RelativeTXT" type="id" />
+    <item name="NounTXT" type="id" />
+    <item name="Verb1TXT" type="id" />
+    <item name="Verb2TXT" type="id" />
+    <item name="HouseTXT" type="id" />
+    <item name="BirdTXT" type="id" />
+    <item name="Adj2TXT" type="id" />
+    <item name="AdjTXT" type="id" />
+</resources>
