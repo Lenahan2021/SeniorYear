@@ -28,7 +28,6 @@ public class BufferWriter {
                 System.err.println("Cannot write file!");
                 e.printStackTrace();
             }
-        
     } 
 
     public static void saveAndClose() {
