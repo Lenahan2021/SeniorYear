@@ -25,6 +25,7 @@ public class PasswordManager {
         Utils.clearConsole();
         System.out.println("You are now logged in!");
         readAndCreateDatabase();
+        categories.get(0).entries.add(new Entry("Keepass", "user", "Pass", "cat"));
         while(!loggedOut) {
             mainMenu();
         }
@@ -92,19 +93,21 @@ public class PasswordManager {
 
     public static void mainMenu() {
         int selectedCat = 0;
-        categories.get(0).entries.add(new Entry("Keepass", "user", "Pass", "cat"));
         System.out.println("Please select one of your categories to view the entries.");
         for (int i =0; i < categories.size(); i++) {
             System.out.println(String.format("%s. %s",  i+1, categories.get(i).name));
         }
+        System.out.println(String.format("%s. Log out", categories.size()+1));
         Scanner ui = new Scanner(System.in);
         System.out.println(categories.size());
         System.out.print("Please select a category number: ");
         selectedCat = ui.nextInt();
-        if (selectedCat < categories.size()) {
+        if (selectedCat < categories.size()+1) {
             displayCategory(selectedCat);
-        } else if (selectedCat == categories.size()) {
+        } else if (selectedCat == categories.size()+1) {
+            Utils.clearConsole();
             System.out.println("logging out!");
+            loggedOut=true;
         }
             else {
                 System.out.println("Invalid choice");
@@ -113,11 +116,14 @@ public class PasswordManager {
 
     public static void displayCategory(int selected) {
         Utils.clearConsole();
+        System.out.println("Here are the following entries for the category:" + categories.get(selected-1).name);
         for (int i =0; i < categories.get(selected-1).entries.size(); i++) {
             System.out.println(String.format("%s. name: %s", i+1, categories.get(selected-1).entries.get(i).name));
             System.out.println(String.format("user: %s", categories.get(selected-1).entries.get(i).username));
             System.out.println(String.format("pass %s \n", categories.get(selected-1).entries.get(i).password));
         }
+
+
     }
 
     public static void readAndCreateAccounts() {
