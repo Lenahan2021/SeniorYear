@@ -47,9 +47,11 @@ public class Utils {
                 while (in.hasNext()) {
                     s  = s + in.nextLine() + "\n";
                 }
+                System.out.println(String.format(String.format("Read from file %s and had info", file)));
                 return s;
             } else {
-                return null;
+                System.out.println(String.format(String.format("Read from file %s but was empty", file)));
+                return "";
             }
         }
 
@@ -74,6 +76,7 @@ public class Utils {
         }
             try {
                 out.write(s);
+                System.out.println(String.format("Wrote to file %s", file));
             } catch(Exception e ) {
                 System.err.println("Cannot write file!");
                 e.printStackTrace();
@@ -108,9 +111,4 @@ public class Utils {
         //technically you need both for the file to be saved and closed
     }
 
-    public static void quitApp() {
-        PasswordManager.writeAccounts();
-        saveAndClose();
-        System.exit(0);
-    }
 }
