@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class PasswordManager {
@@ -9,7 +8,6 @@ public class PasswordManager {
     private static int loginTries = 4;
     private static ArrayList<Account> accounts = new ArrayList<Account>();
     private static ArrayList<Category> categories = new ArrayList<Category>();
-
 
     public static void main(String[] args) {
         readAndCreateAccounts();
@@ -46,25 +44,25 @@ public class PasswordManager {
         String choice = ui.next();
         switch(choice) {
             case "1":
-            Utils.clearConsole();
-            System.out.println("Follow the instructions to create account\n");
-            System.out.println("Please enter a first name");
-            String first = ui.next();
-            System.out.println("Please enter a last name");
-            String last = ui.next();
-            String username = "";
-            System.out.println("Please enter a username");
-            username = ui.next();
-            while (!checkUsername(username)) {
+                Utils.clearConsole();
+                System.out.println("Follow the instructions to create account\n");
+                System.out.println("Please enter a first name");
+                String first = ui.next();
+                System.out.println("Please enter a last name");
+                String last = ui.next();
+                String username = "";
                 System.out.println("Please enter a username");
                 username = ui.next();
-            }
-            System.out.println("Please enter a password");
-            String password = ui.next();
-    
-            Account acc = new Account(first, last, username, password);
-            accounts.add(acc);
-            return false;
+                while (!checkUsername(username)) {
+                    System.out.println("Please enter a username");
+                    username = ui.next();
+                }
+                System.out.println("Please enter a password");
+                String password = ui.next();
+        
+                Account acc = new Account(first, last, username, password);
+                accounts.add(acc);
+                return false;
             case "2":
                 Utils.clearConsole();
                 System.out.println("Please enter account username");
@@ -103,7 +101,9 @@ public class PasswordManager {
         for (int i =0; i < categories.size(); i++) {
             System.out.println(String.format("%s. %s",  i+1, categories.get(i).name));
         }
-        System.out.println(String.format("%s. Log out", categories.size()+1));
+        System.out.println(String.format("%s. Add category", categories.size()+1));
+        System.out.println(String.format("%s. Delete Category", categories.size()+2));
+        System.out.println(String.format("%s. Log out", categories.size()+3));
         Scanner ui = new Scanner(System.in);
         System.out.print("Please select a category number: ");
         selectedCat = ui.nextInt();
@@ -111,11 +111,23 @@ public class PasswordManager {
             displayCategory(selectedCat);
         } else if (selectedCat == categories.size()+1) {
             Utils.clearConsole();
+            System.out.println("What is the name of the category you would like to add?");
+            String catName = ui.next();
+            categories.add(new Category(catName));
+        } else if (selectedCat == categories.size()+2) {
+            System.out.println("What is the name of the category to delete?");
+            String catToDelete = ui.next();
+            if (findIndexOfCat(catToDelete) >= 0) {
+                categories.remove(findIndexOfCat(catToDelete));
+            } else {
+                System.out.println("Category not found to delete!");
+            }
+        } else if (selectedCat == categories.size()+3) {
+            Utils.clearConsole();
             System.out.println("logging out!");
             loggedIn=false;
-        }
-            else {
-                System.out.println("Invalid choice");
+        } else {
+            System.out.println("Invalid choice");
         }
     }
 
@@ -148,7 +160,7 @@ public class PasswordManager {
             System.out.println("name of entry to delete:");
             String delEntryName = ui.next();
             int indexOfEntryToRemove = findEntryIndexInCat(categories.get(selected-1), delEntryName);
-            if (indexOfEntryToRemove > 0) {
+            if (indexOfEntryToRemove >= 0) {
                 categories.get(selected-1).entries.remove(indexOfEntryToRemove);
             }
             break;
@@ -158,6 +170,16 @@ public class PasswordManager {
             System.out.println("Try again");
             break;
         }
+    }
+
+    private static int findIndexOfCat(String name) {
+        for (int i = 0; i< categories.size(); i++) {
+            if (name.equals(categories.get(i).name)) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
     private static int findEntryIndexInCat(Category cat,String name) {
@@ -212,7 +234,7 @@ public class PasswordManager {
 
    public static void writeAccounts() {
         String s = "";
-        System.out.println(String.format("Account size is: %s", accounts.size()));
+        //System.out.println(String.format("Account size is: %s", accounts.size()));
 
         for (int i = 0; i < accounts.size(); i++) {
             s = s + String.format("%s,%s,%s,%s\n", accounts.get(i).first, accounts.get(i).last, accounts.get(i).user, accounts.get(i).pass);
@@ -224,7 +246,7 @@ public class PasswordManager {
 
    public static void writeCategories() {
     String s = "";
-    System.out.println(String.format("Category size is: %s", categories.size()));
+    //System.out.println(String.format("Category size is: %s", categories.size()));
 
     for (int i = 0; i < categories.size(); i++) {
         if (i < categories.size()-1) {
