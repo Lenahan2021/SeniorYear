@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
+//Spencer
 public class BufferWriter {
 
     //global variables
@@ -10,6 +11,8 @@ public class BufferWriter {
     private static Scanner in;
     private static BufferedWriter out;
 
+    //Spencer
+    //writing string to a text file
     public static void writeString(String s) {
 
         if (out == null) {
@@ -31,6 +34,7 @@ public class BufferWriter {
         
     } 
 
+    //Spencer
     public static void saveAndClose() {
         //closes after the Scanner is done reading the file
 
@@ -58,6 +62,7 @@ public class BufferWriter {
         //technically you need both for the file to be saved and closed
     }
 
+    //Spencer
     public static String readString(String file) {
         //check to see if in  is already there, if not create it
         if (in==null) {

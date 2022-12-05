@@ -17,6 +17,7 @@ public class Utils {
     }
 
 
+    //Spencer
     //Modified the statement a little bit to read in multiple lines at once for a string
     public static String readStringFromFile(String file) {
         
@@ -26,6 +27,7 @@ public class Utils {
                 in = new Scanner(new File(file));
             }
             //https://www.w3schools.com/java/java_files_create.asp
+            //if the file is not existing, then we create a new blank file to store future info in
             catch (Exception e) {
                 System.err.println("Cannot open file for input!");
                 System.out.println("Creating new file!");
@@ -63,6 +65,7 @@ public class Utils {
         return null;
     }
 
+    //Spencer
     public static void writeString(String s, String file) {
 
         if (out == null) {
@@ -84,6 +87,7 @@ public class Utils {
         
     }
 
+    //Spencer
     public static void saveAndClose() {
         //closes after the Scanner is done reading the file
 

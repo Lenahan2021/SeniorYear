@@ -2,3 +2,5 @@
 1,2,4,5
 Spencer,Lenahan,yser,pass
 bander,leader,bander,1234
+SPencer,Lenahan,spencer,password
+spencer,asd,user,pass
