@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_madlib"
+            android:icon="@drawable/ic_baseline_drag_indicator_24"
+            android:title="@string/menu_madlib" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="@string/menu_credits"
+            android:icon="@drawable/ic_baseline_drag_indicator_24"
+            android:id="@+id/nav_credits" />
+            />
+        <item
+            android:icon="@drawable/ic_baseline_drag_indicator_24"
+            android:title="@string/menu_gtn"
+            android:id="@+id/nav_gtn" />
+        <item
+            android:icon="@drawable/ic_baseline_drag_indicator_24"
+            android:title="@string/menu_scifi"
+            android:id="@+id/nav_scifi"/>
+    </group>
+</menu>
