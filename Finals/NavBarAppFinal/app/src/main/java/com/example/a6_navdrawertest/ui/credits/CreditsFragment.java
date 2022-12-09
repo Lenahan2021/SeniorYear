@@ -16,7 +16,7 @@ import com.example.a6_navdrawertest.R;
 
 public class CreditsFragment extends Fragment {
 
-    private TextView creditsTXT;
+    private TextView creditsTXT, instructionsTXT;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,6 +24,11 @@ public class CreditsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_credits, container, false);
 
         creditsTXT = rootView.findViewById(R.id.creditsTXT);
+        instructionsTXT = rootView.findViewById(R.id.GTNInstructions);
+
+        instructionsTXT.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+
+
 
         String creditsText = "By: Spencer Lenahan\nSources:\nSpencer's SciFi Name Generator\nSpencer's Mad Lib Generator\nBander's Nav Drawer Notes";
 
