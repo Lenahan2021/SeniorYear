@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">6-NavDrawerTest</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">GD Ritzy\'s</string>
+    <string name="nav_header_subtitle">Contact us: (812)-421-1300</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_iceCream">Ice Cream</string>
+    <string name="menu_selectedIceCream">Ice Cream</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="nav_iceCream">Ice cream</string>
+    <string name="nav_selectedIceCream">Ice cream</string>
+</resources>

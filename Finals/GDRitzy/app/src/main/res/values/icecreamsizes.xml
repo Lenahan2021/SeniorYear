@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="IceCreamSize">
+        <item>Single</item>
+        <item>Double</item>
+        <item>Triple</item>
+        <item>Shake</item>
+        <item>Malt</item>
+        <item>Banana Split</item>
+        <item>Pint</item>
+        <item>Quart</item>
+</string-array>
+</resources>

@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.IceCream.IceCreamFragment">
+
+    <ScrollView
+        android:id="@+id/IceCreams"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/Chocolate"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ChocolateIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/chocolate" />
+
+                <TextView
+                    android:id="@+id/ChocolateTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Chocolate"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ChocolateBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/MintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/MintIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/mint" />
+
+                <TextView
+                    android:id="@+id/MintTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Mint"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/MintBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Vanilla"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/VanillaIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/vanilla" />
+
+                <TextView
+                    android:id="@+id/VanillaTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Vanilla"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/VanillaBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Strawberry"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/StrawberryIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/strawberry" />
+
+                <TextView
+                    android:id="@+id/StrawberryTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Strawberry"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/StrawberryBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/CookiesandCream"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ookiesandCreamIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/cookiescream" />
+
+                <TextView
+                    android:id="@+id/CookiesandCreamTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Cookies Cream"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/CookiesandCreamBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/BirthdayCake"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/BirthdayCakeIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/birthdaycake" />
+
+                <TextView
+                    android:id="@+id/BirthdayCakeTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Birthday Cake"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/BirthdayCakeBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ButteredPecan"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ButteredPecanIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/butteredpecan" />
+
+                <TextView
+                    android:id="@+id/ButteredPecanTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Buttered Pecan"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ButteredPecanBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/CookieDough"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/CookieDoughIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/cookiedough" />
+
+                <TextView
+                    android:id="@+id/CookieDoughTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Cookie Dough"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/CookieDoughBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/MooseTracks"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/MooseTracksIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/moosetracks" />
+
+                <TextView
+                    android:id="@+id/MooseTracksTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Moose Tracks"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/MooseTracksBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Butterscotch"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ButterscotchIMG"
+                    android:layout_width="47dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/butterscotch" />
+
+                <TextView
+                    android:id="@+id/ButterscotchTXT"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Butterscotch"
+                    android:textColor="#177E00"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ButterscotchBTN"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FEFEFE"
+                    android:clickable="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=">"
+                    android:textColor="#FF0000"
+                    tools:textSize="34sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/SelectedIceCream"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/selectedIceCreamImage"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="300dp"
+            android:src="@drawable/ic_baseline_drag_indicator_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_height="150dp" />
+
+        <TextView
+            android:id="@+id/iceCreamDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="420dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="188dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="96dp"
+            android:layout_marginBottom="33dp"
+            android:entries="@array/IceCreamSize"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/AddedToCart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/PriceTXT"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/AddToOrderBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="71dp"
+            android:backgroundTint="#2A6C2C"
+            android:text="Add to order"
+            android:textColor="#FF0000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/PriceTXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="94dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/spinner" />
+
+        <Button
+            android:id="@+id/BackBTN"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="104dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="506dp"
+            android:backgroundTint="#FEFEFE"
+            android:text="&lt;"
+            android:textColor="#FF0000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/AddedToCart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/AddedToCart"
+            android:layout_width="230dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="132dp"
+            android:gravity="center"
+            android:text="Added to cart!"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/spinner"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/spinner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
