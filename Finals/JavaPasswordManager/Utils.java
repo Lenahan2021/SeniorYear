@@ -9,11 +9,15 @@ public class Utils {
     private static Scanner in;
     private static BufferedWriter out;
 
-    //https://stackoverflow.com/questions/2979383/how-to-clear-the-console
+    //https://www.javatpoint.com/how-to-clear-screen-in-java
     public final static void clearConsole()
     {
-        System.out.print("\033[H\033[2J"); 
-        System.out.flush();
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();  
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        
     }
 
 
